@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="FM_UNO"/>
+	<feature automatic="selected" name="initial"/>
+	<feature automatic="selected" name="main"/>
+	<feature automatic="unselected" name="visible"/>
+	<feature manual="selected" name="caché"/>
+	<feature name="nombre_cartes_en_main"/>
+	<feature automatic="selected" name="temps"/>
+	<feature automatic="unselected" name="limité"/>
+	<feature manual="selected" name="non_limité"/>
+	<feature automatic="selected" name="nombre_de_joueurs"/>
+	<feature automatic="unselected" name="deux"/>
+	<feature manual="selected" name="plus_que_2"/>
+	<feature automatic="selected" name="manche"/>
+	<feature automatic="selected" name="pioche"/>
+	<feature automatic="selected" manual="selected" name="tour"/>
+	<feature manual="selected" name="passer"/>
+	<feature automatic="unselected" name="jouer"/>
+	<feature automatic="selected" name="nombre_de_cartes"/>
+	<feature manual="selected" name="une_carte"/>
+	<feature name="trois_cartes"/>
+	<feature automatic="selected" name="cartes_par_tour"/>
+	<feature name="une"/>
+	<feature manual="selected" name="plusieurs"/>
+	<feature manual="selected" name="carte_spéciale"/>
+	<feature name="effet"/>
+	<feature name="contestation"/>
+	<feature name="valide"/>
+	<feature name="fausse"/>
+	<feature automatic="selected" name="fin"/>
+	<feature name="condition"/>
+	<feature automatic="selected" name="final"/>
+	<feature automatic="selected" manual="selected" name="gagnant"/>
+	<feature name="manches_gagnées"/>
+	<feature manual="selected" name="points"/>
+</configuration>

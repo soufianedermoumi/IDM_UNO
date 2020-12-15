@@ -1,0 +1,9 @@
+grammar xtext.MyUNO with org.eclipse.xtext.common.Terminals
+
+generate myUNO "http://www.MyUNO.xtext"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';

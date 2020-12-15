@@ -1,0 +1,77 @@
+grammar xtext.MyUNO with org.eclipse.xtext.common.Terminals
+
+generate myUNO "http://www.MyUNO.xtext"
+
+Variante:
+	'variante' name=STRING
+	'{'
+	debut=Initial
+	manche=Manche
+	fin=Final
+	'}'
+;
+
+//=======Initiale=======
+Initial:
+	'Debut'':'
+	main=Main
+	temps=Temps ('temps:' secondes=INT)?
+	'nombre_cartes_en_main' nombre_cartes_en_main=INT
+	'nombre_de_joueurs' nombre_de_joueurs= Nombre_de_joueurs
+	';'
+;
+
+//Main:
+//	'etat_main'':' etat_main=Etat_Main
+//	'nb_mains'':' nb_mains=Nb_Mains
+//	'nb_cartes_main'':' nb_cartes_mains=Nb_Cartes_Mains
+//;
+
+enum Main:
+	visible = 'visible' | cachee = 'cachee'
+;
+
+enum Temps:
+	visible = 'limité' | cachee = 'non_limité'
+;
+
+enum Nombre_de_joueurs:
+	deux = '2' | plus_que_2 = '>2'
+;
+
+//=======Manche=======
+Manche:
+	'Manche'':'
+	 ('pioche''(' tour=Tour ')' '('nombre_de_cartes=Nombre_de_cartes ')')?
+	 ('cartes_par_tour''(' cartes_par_tours=Cartes_par_tour ')')?
+	 ('carte_spéciale' carte_speciale= STRING)?
+	 ('Contestation''(' contestation=Contestation ')')?
+	 'fin' condition=STRING
+	';'
+;
+
+enum Tour:
+	passer = 'passer' | jouer = 'jouer'
+;
+
+enum Nombre_de_cartes:
+	une_carte = '1' | trois_cartes= '3'
+;
+
+enum Cartes_par_tour:
+	 une = 'une carte à la fois' | plusieurs = 'plusieurs cartes à la fois'
+;
+
+enum Contestation:
+	valide = 'valide' |	fausse = 'fausse'
+;
+
+//=======Final=======
+Final:
+	'gagnant avec'':' gagnant=Gagnant
+	';'
+;
+
+Gagnant:
+	 nombre_de_manches_gagnees = 'manches_gagneées' nombre=INT | points = 'avec les points' nombre_de_points=INT
+;

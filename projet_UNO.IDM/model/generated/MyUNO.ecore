@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="myUNO" nsURI="http://www.MyUNO.xtext" nsPrefix="myUNO">
+  <eClassifiers xsi:type="ecore:EClass" name="Variante">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="debut" eType="#//Initial"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="manche" eType="#//Manche"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fin" eType="#//Final" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Initial">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="main" eType="#//Main"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="temps" eType="#//Temps"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="secondes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre_cartes_en_main"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre_de_joueurs" eType="#//Nombre_de_joueurs"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Main">
+    <eLiterals name="visible" literal="visible"/>
+    <eLiterals name="cachee" value="1" literal="cachee"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Temps">
+    <eLiterals name="visible" literal="limité"/>
+    <eLiterals name="cachee" value="1" literal="non_limité"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Nombre_de_joueurs">
+    <eLiterals name="deux" literal="2"/>
+    <eLiterals name="plus_que_2" value="1" literal=">2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Manche">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tour" eType="#//Tour"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre_de_cartes" eType="#//Nombre_de_cartes"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cartes_par_tours" eType="#//Cartes_par_tour"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="carte_speciale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contestation" eType="#//Contestation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Tour">
+    <eLiterals name="passer" literal="passer"/>
+    <eLiterals name="jouer" value="1" literal="jouer"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Nombre_de_cartes">
+    <eLiterals name="une_carte" literal="1"/>
+    <eLiterals name="trois_cartes" value="1" literal="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Cartes_par_tour">
+    <eLiterals name="une" literal="une carte à la fois"/>
+    <eLiterals name="plusieurs" value="1" literal="plusieurs cartes à la fois"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Contestation">
+    <eLiterals name="valide" literal="valide"/>
+    <eLiterals name="fausse" value="1" literal="fausse"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Final">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gagnant" eType="#//Gagnant"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Gagnant">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre_de_manches_gagnees"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="points" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre_de_points" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+</ecore:EPackage>
